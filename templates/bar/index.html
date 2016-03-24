@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
 
-	<title>Vova Vrabets project</title>
+	<!--<title>Vova Vrabets project</title>-->
 
     </head>
 
@@ -13,5 +13,15 @@
             {{ my_dict.key }}<br>
             {{ my_list.1 }}<br>
             <br>
+    {% autoescape on %}
+            {{ name }}
+        {% endautoescape %}
+        {% comment "Optional note" %}
+            {% autoescape off %}
+                <h3>autoescape off</h3>
+                {{ name }}
+            {% endautoescape %}
+        {% endcomment %}
+
     </body>
 </html>

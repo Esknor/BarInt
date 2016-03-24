@@ -1,9 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-# Create your views here.
-# home_page = None
+from django.conf import settings
 
-# def home_page():
+
+def tren_page(request):
+    # return HttpResponse()
+    # return HttpResponse("<html><title>Welcome to Django. This is my cool Site!</title>")
+    return HttpResponse("<html><title>Welcome to Django. This is my cool Site!</title></html>")
+
+
 def home_page(request):
     # return render(request, 'home/home.html')
     my_dict = {'key':'My dikt Key'}
@@ -19,6 +24,7 @@ def home_page(request):
     ]
 
     return render(request, 'bar/index.html', {'first_name': 'Billi', 'last_name': 'Bons', 'my_dict':my_dict,'my_list':my_list,'name':'<script>alert("XSS");</script>','rowclass1':'border: red solid 7px;', 'rowclass2':'border: green solid 3px;','categories':categories,'cities':cities})
+
 
 def home(request):
     return render(request, "bar/index.html", {})
