@@ -10,4 +10,4 @@ def home_page(request):
 #    pass
 
 def home(request):
-    return render(request, "index.html", {})
+    return render(request, "bar\index.html", {})
